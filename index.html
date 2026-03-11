@@ -56,36 +56,45 @@
 	<h1>Check Kilowatt</h1>
 
 	<div>
-	<input type="text" id="Age" class="form-control" placeholder="Enter kilowatt per hour...">
-	
-	<br><br>
+<input type="text" id="watts" class="form-control" placeholder="Enter kilowatt per hour...">
 
-	<button class="btn btn-info px-4 py-2" onclick="checkWatts()">
-		Check 
-	</button>
-	</div>
+<br><br>
 
-	<script>
-		//checkWatts
-		function checkWatts(){
+<button class="btn btn-light px-4 py-2" onclick="checkWatts()">
+	Check 
+</button>
+</div>
 
-			var Watts = document.getElementById("").value;
+<script>
+	function checkWatts(){
 
-		if(isNaN() || Watts < 0 ){
+		var Watts = Number(document.getElementById("watts").value);
+
+		if(isNaN(Watts) || Watts < 0){
 			alert("Please input a valid number of Kilowatt.");
 		}
 
-		if (Watts <= 100){
+		else if (Watts <= 100){
 			alert("Lifeline Consumer: Discounted electricity rates");
 		}
-		else if (Watts >=101) && (Watts <=200){
+
+		else if (Watts >= 101 && Watts <= 200){
 			alert("Low Consumption: Normal residential rate.");
 		}
-		else {
-			alert("");
+
+		else if (Watts >= 201 && Watts <= 300){
+			alert("Average Consumption: Typical electricity usage.");
+		}
+
+		else if (Watts >= 301 && Watts <= 500){
+			alert("High Consumption: Higher residential rate.");
+		}
+
+		else{
+			alert("Heavy electricity users");
 		}
 	}
-	</script>
+</script>
 
 
 </body>
