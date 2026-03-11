@@ -72,14 +72,14 @@
 			var Watts = document.getElementById("").value;
 
 		if(isNaN() || Watts < 0 ){
-			alert("Please input a valid number.");
+			alert("Please input a valid number of Kilowatt.");
 		}
 
-		if (Watts < 18){
-			alert("You are underage.");
+		if (Watts <= 100){
+			alert("Lifeline Consumer: Discounted electricity rates");
 		}
-		else if (Watts >= 18){
-			alert("");
+		else if (Watts >=101) && (Watts <=200){
+			alert("Low Consumption: Normal residential rate.");
 		}
 		else {
 			alert("");
